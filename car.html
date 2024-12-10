@@ -1,0 +1,165 @@
+<section id="contact">
+    <header>
+        <!-- Botón Volver en la esquina izquierda que redirige al inicio -->
+        <button onclick="window.location.href = 'productos.html';" class="back-btn">Volver</button>
+    </header>
+
+    <div class="contact-details">
+        <h2>¡Ponte en contacto con nosotros!</h2>
+        <p>Si tienes alguna pregunta o necesitas más información sobre nuestros productos, no dudes en escribirnos. ¡Estaremos encantados de ayudarte!</p>
+
+        <h3>Información de contacto</h3>
+        <ul>
+            <li><strong>Teléfono:</strong> +1 234 567 890</li>
+            <li><strong>Email:</strong> ferreteria@gmail.com</li>
+            <li><strong>Dirección:</strong> 	Calle 1ra,	Villa Pompa,Sabana perdida </li>
+        </ul>
+
+        <h3>Formulario de contacto</h3>
+        <form id="contactForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+
+        <div class="notification" id="successMessage">¡Tu mensaje se ha enviado correctamente!</div>
+    </div>
+</section>
+
+<style>
+    #contact {
+        padding: 40px;
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Estilo del botón Volver */
+    .back-btn {
+        background-color: #2980b9;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: #3498db;
+    }
+
+    .contact-details {
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: auto;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-details h2 {
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 1.6rem;
+    }
+
+    .contact-details p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .contact-details ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    .contact-details li {
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+
+    .contact-details form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-details label {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .contact-details input,
+    .contact-details textarea {
+        padding: 12px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .contact-details input:focus,
+    .contact-details textarea:focus {
+        border-color: #2980b9;
+        outline: none;
+    }
+
+    .contact-details button {
+        padding: 12px 20px;
+        background-color: #2980b9;
+        color: white;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact-details button:hover {
+        background-color: #3498db;
+    }
+
+    .notification {
+        display: none;
+        margin-top: 20px;
+        padding: 10px;
+        color: #fff;
+        background-color: #27ae60;
+        border-radius: 5px;
+        font-size: 1rem;
+        text-align: center;
+    }
+</style>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que el formulario se recargue
+
+        // Mostrar el mensaje de éxito
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
+
+        // Ocultar el mensaje de éxito después de 3 segundos
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 3000);
+
+        // Opcional: Limpiar el formulario después del envío
+        document.getElementById('contactForm').reset();
+    });
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martillo - Ferretería</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #2980b9;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .product-details {
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .notification {
+            display: none;
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Martillo</h1>
+    </header>
+
+    <div class="product-details">
+        <img src="martillo.png" alt="Martillo" style="width: 100%; max-width: 400px; border-radius: 10px;">
+        <h2>Descripción</h2>
+        <p>Este martillo es ideal para trabajos de construcción y bricolaje. Su diseño ergonómico proporciona un mejor agarre y control.</p>
+        
+        <h3>Características</h3>
+        <ul>
+            <li>Material: Acero forjado</li>
+            <li>Peso: 450 g</li>
+            <li>Longitud: 30 cm</li>
+        </ul>
+
+        <h3>Precio: $15.99</h3>
+        <button class="btn" id="addToCartBtn">Agregar al carrito</button>
+        <div class="notification" id="notification">Producto agregado al carrito!</div>
+        
+        <h3>Opiniones de Clientes</h3>
+        <p>"Excelente martillo, muy durable." - Juan Pérez</p>
+        
+   
+    </div>
+
+    <script>
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            // Lógica para agregar el producto al carrito (puedes expandir esto)
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+
+            // Ocultar la notificación después de 2 segundos
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>

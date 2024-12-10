@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taladro Inalámbrico - Ferretería</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #2980b9;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .product-details {
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .notification {
+            display: none;
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Taladro Inalámbrico</h1>
+    </header>
+
+    <div class="product-details">
+        <img src="taladro.jpg" alt="Taladro Inalámbrico" style="width: 100%; max-width: 400px; border-radius: 10px;">
+        <h2>Descripción</h2>
+        <p>Este taladro inalámbrico es ideal para perforar y atornillar en cualquier lugar. Su diseño compacto y ligero permite una gran movilidad.</p>
+        
+        <h3>Características</h3>
+        <ul>
+            <li>Potencia: 18V</li>
+            <li>Peso: 1.2 kg</li>
+            <li>Tiempo de carga: 1 hora</li>
+        </ul>
+
+        <h3>Precio: $49.99</h3>
+        <button class="btn" id="addToCartBtn">Agregar al carrito</button>
+        <div class="notification" id="notification">Producto agregado al carrito!</div>
+        
+        <h3>Opiniones de Clientes</h3>
+        <p>"Muy potente y práctico, lo recomiendo." - Carlos García</p>
+        
+        
+    </div>
+
+    <script>
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>
